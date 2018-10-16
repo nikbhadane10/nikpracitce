@@ -1,6 +1,6 @@
 node {
    stage ('Checkout code') {
-    checkout scm
+    checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '12345', url: 'https://github.com/nikbhadane/nikpracitce']]])
   }
 stage ('Final') {
    echo 'Hello World'
